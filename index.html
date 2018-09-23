@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="DC.date" content="2018-07-26 11:29:48 PM" />
+        <meta name="DC.language" content="ENU" />
+
+<meta name="google" value="notranslate" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Created by TECHWIZ</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-grey.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+    $(document).ready(function(){
+$(this).scrollTop(0);
+});
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+
+   $('#contact').submit(function(e){
+            var name = document.getElementById('inputName'),
+                email = document.getElementById('inputEmail'),
+                message = document.getElementById('inputMessage');
+            if(!name.value || !email.value || !message.value){
+                alertify.error('Please Check Your Enteries')
+            }
+            else{
+                $.ajax({
+                         url: "https://formspree.io/lingeshwaran001@gmail.com", 
+                         method: "POST",
+                         data: $(this).serialize(),
+                         dataType: "json"
+                                });
+                e.preventDefault()
+                $(this).get(0).reset()
+                alertify.succes('Message Sent')
+            }
+            })
+</script>
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+    height:100%;
+    margin:0;
+   background-repeat: no-repeat;
+   background-size: cover;
+     background-attachment: fixed;
+    font-family: "Lato", sans-serif;
+background-image: url("https://4.bp.blogspot.com/-NnsS3eNNFyY/Wr-juyxPA7I/AAAAAAAACog/3rKuAA5LgooHFluq4FbG9v2T07YAjpUCwCLcBGAs/s1600/code-wallpaper-6.png");}
+* {
+  box-sizing: border-box;
+}
+.progress-container {
+  width: 30%;
+  height: 4px;
+  position: fixed;
+  background: black;
+}
+
+.progress-bar {
+  height: 4px;
+  background: #0179F4;
+  width: 0%;
+}
+
+.content {
+  padding: 100px 0;
+  margin: 50px auto 0 auto;
+  width: 100%;
+}
+.sidenav {
+    height: 100%;
+    width:30%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:black ;
+    opacity: 0.9;
+    overflow-x: hidden;
+    padding-top: 20px;
+   animation:cubic-bezier;
+}
+
+
+.blog {
+    height: 100%;
+    width: 70%;
+    z-index: 1;
+    margin-left: 150px;
+        margin-top: 20px;
+
+    top: 0;
+    left: 0;
+    background-color:black ;
+    opacity: 0.8;
+    overflow-x: hidden;
+    padding-top: 20px;
+   animation:cubic-bezier;
+}
+
+.blogb {
+    height:100%;
+    width:70%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    margin-left: 150px;
+    margin-top: 20px;
+    background-color:black ;
+    opacity: 0.8;
+    overflow-x: hidden;
+    padding-top: 20px;
+   animation:cubic-bezier;
+}
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.container {
+    position: relative;
+    width: 70%;
+        opacity:0.9;
+
+    margin-left:150px;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: black;
+  opacity: 0.8;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 100%; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+a:hover {
+    background-color: black;
+}
+.button {
+    background-color:black;
+    border: none;
+    color: white;
+    padding: 7px 18px;
+    text-align: center;
+margin-left:40%;
+border-radius: 12px;
+transition: all 0.5s;
+text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.button1{
+    background-color:#0179F4;
+    border: none;
+    color: white;
+    padding: 7px 18px;
+    text-align: center;
+margin-left:200px;
+border-radius: 12px;
+transition: all 0.5s;
+text-decoration: none;
+    display: inline-block;
+    
+    cursor: pointer;
+    
+}
+.button1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button1 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button1:hover span {
+  padding-right: 25px;
+}
+
+.button1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-font-smoothing:antialiased;
+	-moz-font-smoothing:antialiased;
+	-o-font-smoothing:antialiased;
+	font-smoothing:antialiased;
+	text-rendering:optimizeLegibility;
+}
+
+
+.container1 {
+	width:100%;
+        background: black;
+	margin-left: 150px;
+            opacity: 0.8;
+
+	position:relative;
+}
+
+#contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact textarea, #contact button[type="submit"] { font:400 12px/16px "Open Sans", Helvetica, Arial, sans-serif; }
+
+#contact {
+	background:black;
+	padding:25px;
+    opacity: 0.8;
+	margin:50px 0;
+}
+
+#contact h3 {
+	color: #F96;
+	display: block;
+	font-size: 30px;
+	font-weight: 400;
+}
+
+#contact h4 {
+	margin:5px 0 15px;
+	display:block;
+	font-size:13px;
+}
+
+fieldset {
+	border: medium none !important;
+	margin: 0 0 10px;
+	min-width: 100%;
+	padding: 0;
+	width: 100%;
+}
+
+#contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact textarea {
+	width:100%;
+	border:1px solid #CCC;
+	background:#FFF;
+	margin:0 0 5px;
+	padding:10px;
+}
+
+#contact input[type="text"]:hover, #contact input[type="email"]:hover, #contact input[type="tel"]:hover, #contact input[type="url"]:hover, #contact textarea:hover {
+	-webkit-transition:border-color 0.3s ease-in-out;
+	-moz-transition:border-color 0.3s ease-in-out;
+	transition:border-color 0.3s ease-in-out;
+	border:1px solid #AAA;
+}
+
+#contact textarea {
+	height:100px;
+	max-width:100%;
+  resize:none;
+}
+
+#contact button[type="submit"] {
+	cursor:pointer;
+	width:100%;
+	border:none;
+	background:#0179F4;
+	color:#FFF;
+	margin:0 0 5px;
+	padding:10px;
+	font-size:15px;
+}
+
+#contact button[type="submit"]:hover {
+	background:#09C;
+	-webkit-transition:background 0.3s ease-in-out;
+	-moz-transition:background 0.3s ease-in-out;
+	transition:background-color 0.3s ease-in-out;
+}
+
+#contact button[type="submit"]:active { box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5); }
+
+#contact input:focus, #contact textarea:focus {
+	outline:0;
+	border:1px solid #999;
+}
+::-webkit-input-placeholder {
+ color:#888;
+}
+:-moz-placeholder {
+ color:#888;
+}
+::-moz-placeholder {
+ color:#888;
+}
+:-ms-input-placeholder {
+ color:#888;
+}
+
+.side{
+    width: 73%;
+    background: black;
+    opacity: 0.9;
+    display: none;
+}
+
+.main {
+    margin-left:30%;
+    font-size: 15px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+    margin-top: 100px;
+    
+}
+.icon-bar {
+    width: 10%;
+    display:none;
+    opacity:0.7;
+    position:fixed;
+    background-color: black;
+}
+
+.icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 48px;
+}
+.fa1 {
+  padding: 20px;
+  font-size: 50px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa1:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+.fa-github {
+  background: grey;
+  color: white;
+}
+.icon-bar a:hover {
+    background-color: black;
+}
+
+.active {
+    background-color: black !important;
+}
+
+.collapsible {
+    background-color: #0179F4;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active, .collapsible:hover {
+    background-color: #555;
+}
+
+.collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    font-size: 15px;
+    width:70%;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: black;
+}
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: none;
+  height:10%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 34px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.navbar .icon {
+  display: none;
+}
+
+/* Full-width input fields */
+
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #0179F4;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    position: relative;
+}
+
+img.avatar {
+    width: 100%;
+    
+}
+
+.container1 {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 40%;
+    height: auto;/* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+.chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+}
+
+.chip img {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+* {
+    box-sizing: border-box;
+}
+
+
+
+.container5 {
+    border: 3px solid #f1f1f1;
+    width:100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.row1 {
+    padding: 10px;
+    background: #f1f1f1;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column1 {
+    float: left;
+}
+
+.left {
+    width: 15%;
+}
+
+.right {
+    width: 10%;
+}
+
+.middle1 {
+    width: 75%;
+}
+
+/* Clear floats after the columns */
+.row1:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Three dots */
+.dot {
+    margin-top: 4px;
+    height: 12px;
+    width: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Style the input field */
+input[type=text] {
+    width: 100%;
+    border-radius: 3px;
+    border: none;
+    background-color: white;
+    margin-top: -8px;
+    height: 25px;
+    color: #666;
+    padding: 5px;
+}
+
+/* Three bars (hamburger menu) */
+.bar {
+    width: 17px;
+    height: 3px;
+    background-color: #aaa;
+    margin: 3px 0;
+    display: block;
+}
+
+.content5 {
+    padding: 20px;
+    width:100%;
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+#tsc_player {
+   z-index: 9999;	
+}
+
+.tscplayer_inline {
+	position:static;
+	margin: 30px;
+	width: 852px;
+	height: 480px;
+	z-index:auto;
+}
+
+.tscplayer_fullframe {
+	position:absolute;
+	top: 0px;
+	left: 0px;
+	margin: 0px;
+	padding: 0px;
+	z-index: 9999;	
+}
+
+@media screen and (max-width: 852px) {
+    .tscplayer_inline {
+	width: 100%;
+    }
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+
+ @media (min-width: 1200px) and (max-width: 1280px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+@media (min-width: 375px) and (max-width: 1150px) and (orientation : portrait)
+{
+  /* For mobile phones: */
+    .main,.column,.blog,.blogb,.container,.content,.collapsible {
+    width:100%;
+    margin-left:0px;
+    font-size:32px;
+
+  }
+  .content{
+      font-size: 18px;
+  }
+    .navbar{display: block;}
+
+    .main{  margin-top: 10%;
+  height: 90%; 
+  overflow:scroll;
+    padding: 16px;
+}
+ .icon-bar{display:block;
+     height:100%;
+ }
+  
+  .side{
+      height: 10%;
+      display: block;
+       font-size: 80px;
+margin-left: 0px;
+      width: 100%;
+      
+  }
+  
+  .button,.button1{
+     font-size:36px;
+     margin-left:50%;
+  }
+.sidenav   { display: none;
+}
+}
+
+
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 900px) 
+and (orientation : portrait)
+{
+      /* For i phones: */
+    .main,.column,.blog,.blogb,.container,.content,.collapsible {
+    width:100%;
+    margin-left:0px;
+    font-size:32px;
+    
+  }
+  .navbar{display: block;}
+   .content{
+      font-size: 18px;
+  .main{  margin-top: 10%;
+  height: 90%; 
+  overflow:scroll;
+    padding: 16px;
+}
+  .side{
+      height: 10%;
+      display: block;
+      width: 100%;
+ font-size: 80px;
+ margin-left: 0px;
+      position:relative;
+  }
+   height:100%;
+   background-repeat: no-repeat;
+    background-attachment: fixed;
+  .button,.button1{
+     font-size:36px;
+     margin-left:50%;
+  }
+.sidenav   { display: none;
+}
+}
+@media screen and (max-width: 600px) {
+  .navbar a:not(:first-child) {display: none;}
+  .navbar a.icon {
+    float: right;
+    display: block;
+  }
+    .sidenav{display:none}
+
+}
+
+@media screen and (max-width: 600px) {
+  .navbar.responsive {position: relative;}
+  .navbar.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .sidenav{display:none}
+  .navbar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+
+</style>
+<link rel="icon" href="https://3.bp.blogspot.com/-hLbJLwuQTQk/Wn7_gaiLK7I/AAAAAAAACbc/bZ07wW17wDMz5gJNP-F5wEPMOfN4Yd8HACLcBGAs/s1600/LR.png" type="image/gif" sizes="16x16">
+
+</head>
+<body>
+    
+ 
+<div class="navbar" id="myTopnav">
+    <a href="#home" >Home</a> 
+   <a class="w3-animate-right" href="#profile">Profile</a>
+      <a class="w3-animate-right" href="#accomp">Accomplishment</a>
+
+  <a class="w3-animate-right" href="#intellikart">Works</a>
+  <a class="w3-animate-right" href="#contact">Contact</a>
+   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+        <script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "navbar") {
+        x.className += " responsive";
+    } else {
+        x.className = "navbar";
+    }
+}
+</script>
+<div class="main" id="home" >    
+   <div class="sidenav w3-black w3-sidebar">
+     <h2 class="w3-animate-right" style="color:#0179F4  ; margin-left:27%;margin-top: 25%"><b>LINGESHWARAN R</b><image src="https://3.bp.blogspot.com/-921OIN1VYbo/Wn8I7cuHloI/AAAAAAAACcI/rwsBtdMGRnAqoF1CsJtq3i9iZb_QKxQcACLcBGAs/s1600/lr1.png" style="margin-left: 2%; height:15%;width:15%; "/></h2>
+      <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div>
+     <h4 class="w3-animate-right" style="color:whitesmoke  ; margin-left: 47%;"> Computer Science Undergraduate <i class="fa fa-graduation-cap w3-animate-right" style="margin-left: 3%" aria-hidden="true"></i></h4>
+  <a style=" margin-left: 62%;margin-top: 12%;font-size: 16px" class="w3-animate-right" href="#profile">Profile<i class="fa fa-user w3-animate-right" style="margin-left: 3%" aria-hidden="true"></i></a>
+    <a style=" margin-left: 62%;font-size: 16px" class="w3-animate-right" href="#accomp">Accomplishment<i class="fa fa-check-square w3-animate-right" style="margin-left: 3%" aria-hidden="true"></i></a>
+
+  <a style=" margin-left: 62%;font-size: 16px" class="w3-animate-right" href="#intellikart">Works<i class="fa fa-code w3-animate-right" style="margin-left: 3%" aria-hidden="true"></i>
+</a>
+  <a style=" margin-left: 62%;font-size: 16px" class="w3-animate-right" href="#contact">Contact <i class="fa fa-address-card w3-animate-right" style="margin-left: 3%" aria-hidden="true"></i>
+</a>
+  <a style=" margin-left: 62%;color:#0179F4;margin-top: 25%; font-size: 16px" class="w3-animate-right" href="https://techkshare.blogspot.com/" target="blank"><b>My Blog</b><i class="fa fa-pencil-square" style="margin-left: 3%" aria-hidden="true"></i>
+</a>
+
+</div>
+  <script>
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>
+  
+     
+
+<div class="side">
+                         <p class="w3-animate-right" style="color:#0179F4; margin-left: 5%;"><b>LINGESHWARAN R</b><image src="https://3.bp.blogspot.com/-921OIN1VYbo/Wn8I7cuHloI/AAAAAAAACcI/rwsBtdMGRnAqoF1CsJtq3i9iZb_QKxQcACLcBGAs/s1600/lr1.png" style="margin-left: 5px; height:100px;width: 100px; "/></p>
+
+    </div>
+   
+    <div class="container">
+        <img class="w3-animate-top" src="https://4.bp.blogspot.com/-XKg9zaC4WcQ/WufrGq_eCiI/AAAAAAAAC4A/NOB96aqBUmwRWRSFZZ_-DQaYJTYLBa4lQCLcBGAs/s1600/weblr.jpg"  alt="lingesh"  style="width:100%" hspace="150" opacity:0.8 />
+      <div class="middle" >
+          <div class="text w3-animate-bottom" style="color:#0179F4 "><b>I'M_A_ANDROID_DEVELOPER</b></div>
+  </div>
+        </div>
+  
+    <div class="blog  w3-container w3-card w3-black w3-round " id="profile"><br>
+        <span class="w3-right w3-opacity">16 min</span>
+        <p style="color:#0179F4 " class="w3-animate-top"><b>Profile</b></p><br>
+        <hr class="w3-clear">
+        <div class="row">
+  <div class="column w3-animate-left" style="background-color:black;">
+    <p>About me</p>
+
+    <ul>
+        <li ><strong>Name : </strong> <strong style="color:#0179F4;">Lingeshwaran R</strong></li>
+  <li><strong>Qulaification : </strong>II BE CSE</li>
+  <li><strong>Languages Known : </strong><ul style="margin-left: 40px">
+          <li>C,C++</li>
+    <li>python</li>
+        <li>Java</li>
+    <li>R</li>
+    <li>Android</li>
+        <li>Html,CSS</li>
+
+
+  </ul>
+
+
+  </ul>
+   </div>
+  <div class="column w3-animate-right" style="background-color:#0179F4  ;">
+   <p class="head">Skills</p>
+  <ul>
+    <li>Developing Android Application</li>
+    <li>Web Design with HTML & CSS</li>
+  </ul>
+  <p class="head">Education</p>
+  <ul>
+  
+      <li>Schooling At<b><a href="http://www.tvsmhss.org/" target="_blank"> Tvs Matriculation Higher Secondary School</a></b></li>
+   <li>Undergraduate At <b><a href="http://vcet.ac.in/" target="_blank"> Velammal College Of Engineering And Technology </a></b></li>
+
+  </ul>
+  <button onclick="document.getElementById('id01').style.display='block'" class="button" style="width:auto;">Check Me</button>
+
+
+  </div>
+</div>
+    </div>
+<div class="blogb w3-container w3-card w3-black w3-round" id="accomp"><br>
+        <span class="w3-right w3-opacity">16 min</span>
+        <p style="color:#0179F4 "><b>Accomplishments</b></p><br>
+        <hr class="w3-clear">
+        <button class="collapsible">Certifications</button>
+        <div class="content" style="width:100%" >
+            <ul >
+                <li  class="w3-theme-l2">
+                    <p style=""><b>Android Developer From Scratch</b></p>
+                    <p style="">Jan 2018 – Present ~ License UC-H5K2BOLP <a style="color:#0179F4; margin-left: 30%" href="https://www.udemy.com/certificate/UC-H5K2BOLP/" target="blank" >See Certificate</a>
+</p>
+                </li>
+                <li class="w3-theme-l5">
+                    <p style=""><b>Responsive Web Development From Sratch</b></p>
+                    <p style="">Jan 2018 – Present ~ License UC-9KE45BKH <a style="color:#0179F4; margin-left: 30%" href="https://www.udemy.com/certificate/UC-9KE45BKH/" target="blank" >See Certificate</a>
+</p>
+                </li>
+                <li class="w3-theme-l2">
+                    <p style=""><b>Python online Course</b></p>
+                    <p style="">Jan 2018 – Present ~ License UC-4T2G4D51 <a style="color:#0179F4; margin-left: 30%" href="https://www.udemy.com/certificate/UC-4T2G4D51/" target="blank" >See Certificate</a>
+</p>
+                </li>
+                <li class="w3-theme-l5">
+                    <p style=""><b>Python For Data Analysis</b></p>
+                    <p style="">Jan 2018 – Present... ~ License... #5,019,109 <a style="color:#0179F4; margin-left: 30%" href="https://www.datacamp.com/statement-of-accomplishment/course/526e78002e7716a352015e7085b3ef5aca161dde?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Bu0awySpzSX6L0OKtPmkUqw%3D%3D" >See Certificate</a>
+</p>
+                </li>
+                <li class="w3-theme-l2">
+                    <p style=""><b>AWS Concepts</b></p>
+                    <p style="">Jan 2018 – Present ~ License UC-14R2XIF9 <a style="color:#0179F4; margin-left: 30%" href="https://www.udemy.com/certificate/UC-14R2XIF9/" target="blank" >See Certificate</a>
+</p>
+                </li>
+            </ul>
+            
+
+            </div>
+                <button class="collapsible">Honors & Awards</button>
+                <div class="content" style="width:100%" >
+                            <ul>
+                <li class="w3-theme-l2">
+                    <p style=""><b>TN State Level Project Summit Award</b></p>
+                                        <p style="">2nd Place</p>
+
+                    <p style="">Oct 2017  ~ MADURAI DISTRICT COLLECTOR </p>
+                </li>
+                <li class="w3-theme-l5">
+                    <p style=""><b>PROJECT COMPETITION AT VIT</b></p>
+                                        <p style="">1st Place</p>
+
+                    <p style="">Nov 1, 2017  ~ VIT TEAM </p>
+                </li>
+                <li class="w3-theme-l2">
+                    <p style=""><b>DEPT OF ECE PROJECT COMPETITION (VCET)</b></p>
+                                                            <p style="">2nd Place</p>
+
+                    <p style="">Nov 1, 2017 ~ PRINCIPAL VCET </p>
+                </li>
+                <li class="w3-theme-l5">
+                    <p style=""><b>PROJECT EXPO at #IIT MADRAS</b></p>
+                                                            <p style="">Top 5 Among 50</p>
+
+                    <p style="">Jan 4, 2018 ~ Juspay </p>
+                </li>
+                <li class="w3-theme-l2">
+                    <p style=""><b>DEPT OF IT PROJECT COMPETITION (VCET)</b></p>
+                                                            <p >2nd Place</p>
+
+                    <p style="">FEB 8, 2018 ~ PRINCIPAL VCET</p>
+                </li>
+                <li class="w3-theme-l5">
+                    <p style=""><b>PROJECT COMPETITION AT GCE SALEM)</b></p>
+                                                            <p >2nd Place</p>
+
+                    <p style="">Mar 9, 2018 ~ DRDO SCIENTIST</p>
+                </li>
+                <li class="w3-theme-l2">
+                    <p style=""><b>PAPER PRESENTATION AT GCE SALEM</b></p>
+                                                            <p >1st Place</p>
+
+                    <p style="">Mar 9, 2018 ~ INFOSYS Project Director</p>
+                </li>
+            </ul>
+                </div>
+        <button class="collapsible">Courses</button>
+         <div class="content" style="width:100%" >
+                            <ul>
+                <li class="w3-theme-l2">
+                    <p style=""><b>Android Development</b></p>
+
+                    <p style="">Udacity </p>
+                </li>
+                <li class="w3-theme-l5">
+                    <p style=""><b>Machine Learning Using Python And R</b></p>
+
+                    <p style="">Udemy</p>
+                </li>
+                <li class="w3-theme-l2">
+                    <p style=""><b>Python In Data science</b></p>
+
+                    <p style="">Data Camp</p>
+                </li>
+
+                            </ul>
+         </div>
+<button class="collapsible">Organizations</button>
+         <div class="content" style="width:100%" >
+                            <ul>
+                <li class="w3-theme-l2">
+                    <p style=""><b>Google Developers Group , Madurai</b></p>
+
+                    <p style="">Member and Organizer </p>
+                </li>
+                <li class="w3-theme-l5">
+                    <p style=""><b>Indian Society For technical Education(ISTE)</b></p>
+
+                    <p style="">Member</p>
+                </li>
+                
+
+                            </ul>
+         </div>
+       
+        </div>
+
+
+    <div class="blogb w3-container w3-card w3-black w3-round" id="intellikart"><br>
+        <span class="w3-right w3-opacity">16 min</span>
+        <p style="color:#0179F4 "><b>Works</b></p><br>
+        <hr class="w3-clear">
+<button class="collapsible">Intellikart</button>
+         <div class="content" style="width:100%" >   
+         <div class="container5">
+ <div class="row1">
+    <div class="column1 left">
+      <span class="dot" style="background:#ED594A;"></span>
+      <span class="dot" style="background:#FDD800;"></span>
+      <span class="dot" style="background:#5AC05A;"></span>
+    </div>
+    <div class="column1 middle1">
+      <input type="text" value="http://www.lingeshwranr/intellikart.ml">
+    </div>
+    <div class="column1 right">
+      <div style="float:right">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content5">
+    
+                     <h3 style="color:#0179F4; text-align: center; font-size: 17px "><b>INTELLIKART</b></h3><br>
+                     <h5 style="text-align:center;">For Queue Less And Effortless Billing</h5><br>
+
+<image class="center" src="https://1.bp.blogspot.com/-vErvUUJy1JQ/Wn7U99eQX6I/AAAAAAAACac/yy0aBOvjrQEsXzLnjSGb-Exms8AsNZXlQCLcBGAs/s1600/IMG20170909112229.jpg" style="width:90%;height:400px;text-align:center  "/>
+<br>
+        <p> Shopping at big malls has become a daily activity in metro cities. There is a huge rush in the mall, special occasions and weekends. This rush in the market is mainly a problem when we are standing in the queue for billing the purchases. People picks different items and drop in the trolley. After that only there exists the toughest part of the shopping, the billing and its queue. Our aim is to develop a solution for the above mentioned challenge using IOT and mobile application. To overcome the problems stated above and to improve the existing system, we have designed a trolley which is going to be really SMART. This can be done by simple reading the barcode from the products and a barcode reader with a circuit is attached on the shopping trolley.
+        </p><br>
+<p>Description:</p>
+<ul>
+    <li>Automatic billing of products by using barcode reader will 	be a more essential option in the future of shopping</li>
+    <li>
+       The system based on barcode technique is efficient, speed 	and shows amazing  performance.</li>
+    <li> This system using IOT will save time of customers and 	manpower required in stores and cost associated with the product.
+</li>
+    
+</ul><br>
+<p>Budget Heads</p><br>
+<image class="center" src="https://4.bp.blogspot.com/-sk2MxzQo7XA/Wn7N2o6I7MI/AAAAAAAACZ0/-cCEsWKd050kruV2tqAJj2xnqGUZUhqEQCLcBGAs/s1600/Capture.PNG"/>
+<br><p>Key Feature</p>
+<p>The buyers purchase is been monitored using data analytics and graph is been generated. And with help of these graphs marketing techniques is been generated.Based on each customers marketting graph each customer will be offered with induvidual offers to pull the customers to the shop often and to increase the sales of the shop.
+</p><br>
+<embed  width="600" height="300"
+src="https://www.youtube.com/v/-5dj57m-7uk " allowfullscreen>
+<p>Contributors</p>
+<div class="chip" style="color: black">
+  <img src="https://scontent.fblr4-1.fna.fbcdn.net/v/t1.0-9/19366282_1092034027563190_613864028710592273_n.jpg?oh=122b9e115cb6101fc2b08e7ad2e68acf&oe=5AFFDB56" alt="LINGESHWARAN R" width="96" height="96">
+  LINGESHWARAN R
+</div>
+ <div class="chip" style="color: black; margin-left: 35px">
+  <img src="https://lh3.googleusercontent.com/--uti48zTYuw/WjqSHeLzLKI/AAAAAAAAEUM/wlRLsd5UD-YKCZRnI1wNxb8MyiNAD-vNwCJoC/w663-h663-n-rw/IMG-20171214-WA0025.jpg" alt="LINGESHWARAN R" width="96" height="96">
+  SELVAKUMAR C
+</div>
+<div class="chip" style="color: black; margin-top: 20px">
+  <img src="https://scontent.fblr4-1.fna.fbcdn.net/v/t1.0-9/20140117_395600987509243_9004041366150098806_n.jpg?oh=1d86c109a871839337c9d8c245f8d921&oe=5B4A8384" alt="LINGESHWARAN R" width="96" height="96">
+  NAVEEN PRASATH M
+</div>
+<div class="chip" style="color: black; margin-left: 20px; margin-top: 20px">
+  <img src="https://scontent.fblr4-1.fna.fbcdn.net/v/t1.0-9/15134660_200978467025616_1056357237541889533_n.jpg?oh=d06db8d9d0b5b350154ddc433698d8b1&oe=5B383EE7" alt="LINGESHWARAN R" width="96" height="96">
+  NIRMAL RAAJ S
+</div>
+<a href="https://drive.google.com/file/d/1gQmo7LdbKuR1ANTDY3OFEfFWpm7uRnb2/view?usp=sharing" target="blank" class="button1" ><span>View Document </span></a><br>
+  </div>
+</div>
+         </div>        
+
+<button class="collapsible">Farm2Home</button>
+
+<div class="content" style="width:100%" > 
+<div class="container5">
+  <div class="row1">
+    <div class="column1 left">
+      <span class="dot" style="background:#ED594A;"></span>
+      <span class="dot" style="background:#FDD800;"></span>
+      <span class="dot" style="background:#5AC05A;"></span>
+    </div>
+    <div class="column1 middle1">
+      <input type="text" value="http://www.lingeshwranr/farm2home.ml">
+    </div>
+    <div class="column1 right">
+      <div style="float:right">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content5">
+       <h3 style="color:#0179F4; text-align: center; font-size: 17px "><b>FARM2HOME</b></h3><br>
+                         <h5 style="text-align:center;">A Tool For Farmer Welfare</h5><br>
+                         <image class="center" src="https://4.bp.blogspot.com/-4UAG-p0Evps/WqN8M9ULaiI/AAAAAAAACl4/DrXvMP2OdfokEyjQDhR2UuTweQJ_JxgbQCLcBGAs/s1600/f2h%2B%25282%2529.jpg" style="width:90%;height:350px;text-align:center  "/>
+
+    <p>Farmer ->consumer = Farm2Home<br>
+We have a plan of implementing a mobile app named FARM2HOME that helps to overcome the farmer’s issues. The app consists of two ends, one is for farmers and the other is for buyers(people). The farmers can login to the app and can start posting their products with its dynamic rates (rate is fixed by the local agriculture committee) after setting up their personal details like name, location, contact etc. At the other end the buyers can login to the app and can buy the vegetables by seeing the nearby farmers posts (posts are filtered with location of the buyers) and can add them to cart and after all the commodities are purchased they are shipped to their residence. Our FARM2HOMEfocuses on both the farmer and the customer end by neglecting the middle man and enriching farmer’s welfare and reducing the workload of buyers and giving them pure green vegetables at their doorstep
+</p>
+<p>Description:</p><br>
+<ul>
+    <li>Generation of production graph which in order to prevent the profitless income for farmers</li>
+    <li>
+      	A Platform to sell the farmers product directly to the customers without involvement of middle man need to be introduced.</li>
+   
+    
+</ul>
+<p>Key Feature:</p><br>
+<p>Production Graph:<br>
+    The vegetables ,fruits which will be in demand   is monitored using data analytics and graph is been generated. And with help of these graphs production techniques is been generated.<br>Production Techniques:<br>
+Based on demand production graph is generated each farmer will be suggested with individual instruction to do farming for their welfare
+
+</p>
+<p>App Shots</p>
+<image src="https://1.bp.blogspot.com/-Jsg557f3i0Q/Wn7aDEKnABI/AAAAAAAACa0/s1LbjyWH40wtE3FZnOjc_aqj0PJ40KqvQCLcBGAs/s1600/Screenshot_1517534808.png" style="width:200px;height:400px; "/>
+<image src="https://4.bp.blogspot.com/-zUl167kCbsI/Wn7aCzdu8ZI/AAAAAAAACaw/qeHByvj4VzI4qhVUu-DgPgyWJ-6uQlbgwCLcBGAs/s1600/Screenshot_1517534819.png" style="width:200px;height:400px; margin-left:30px "/>
+<image src="https://3.bp.blogspot.com/-oUAS0ifd5cc/Wn7aCsG6yJI/AAAAAAAACas/61c7-Oj5beow-hakKqPQtXH_w6E6-WAsQCLcBGAs/s1600/Screenshot_1517534826.png" style="width:200px;height:400px; margin-left:30px "/>
+<image src="https://3.bp.blogspot.com/-8hKrS6Bo7Jc/Wn7aFPZmb8I/AAAAAAAACa8/uTGwypxv490ZYYMH2yzS0yFkoDda4VD6wCLcBGAs/s1600/Screenshot_1517534847.png" style="width:200px;height:400px; "/>
+<image src="https://1.bp.blogspot.com/-K9KTPW6Jq5Q/Wn7aD-20SwI/AAAAAAAACa4/qQyDWKFywWQY77w6e_lUXJQfTda2BCiXwCLcBGAs/s1600/Screenshot_1517534900.png" style="width:200px;height:400px; margin-left:30px "/>
+<image src="https://1.bp.blogspot.com/-0785Mup60PY/Wn7cgHH6TtI/AAAAAAAACbM/OYHFPVvsBBo0zD5-CuIU8JFi4evr-cQ5gCLcBGAs/s1600/Screenshot_1517534902.png" style="width:200px;height:400px; margin-left:30px "/>
+
+<embed  width="600" height="300"
+src="https://www.youtube.com/v/9qzjgMT5qak" allowfullscreen>
+
+
+<p>Contributors</p>
+   <div class="chip" style="color: black">
+  <img src="https://scontent.fblr4-1.fna.fbcdn.net/v/t1.0-9/19366282_1092034027563190_613864028710592273_n.jpg?oh=122b9e115cb6101fc2b08e7ad2e68acf&oe=5AFFDB56" alt="LINGESHWARAN R" width="96" height="96">
+  LINGESHWARAN R
+</div>
+ <div class="chip" style="color: black; margin-left: 35px">
+  <img src="https://lh3.googleusercontent.com/--uti48zTYuw/WjqSHeLzLKI/AAAAAAAAEUM/wlRLsd5UD-YKCZRnI1wNxb8MyiNAD-vNwCJoC/w663-h663-n-rw/IMG-20171214-WA0025.jpg" alt="LINGESHWARAN R" width="96" height="96">
+  SELVAKUMAR C
+</div>
+<div class="chip" style="color: black; margin-top: 20px">
+  <img src="https://scontent.fblr4-1.fna.fbcdn.net/v/t1.0-9/20140117_395600987509243_9004041366150098806_n.jpg?oh=1d86c109a871839337c9d8c245f8d921&oe=5B4A8384" alt="LINGESHWARAN R" width="96" height="96">
+  NAVEEN PRASATH M
+</div>
+<div class="chip" style="color: black; margin-left: 20px; margin-top: 20px">
+  <img src="https://scontent.fblr4-1.fna.fbcdn.net/v/t1.0-9/15134660_200978467025616_1056357237541889533_n.jpg?oh=d06db8d9d0b5b350154ddc433698d8b1&oe=5B383EE7" alt="LINGESHWARAN R" width="96" height="96">
+  NIRMAL RAAJ S
+</div>
+  <a href="https://drive.google.com/file/d/11qQhNDehiGZdHUpow5cW3GpxxwHLmnGy/view?usp=sharing" target="blank"  class="button1" ><span>View Document </span></a>
+</div>    
+    
+   
+  </div>
+</div>
+                        
+</div>
+ <script>
+ var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });}
+</script>
+
+
+
+        
+    
+    <div class="container  w3-container" style="background-color:black; opacity:0.9; margin-top: 20px" >  
+  <form id="contact"  method="post" enctype="text/plain">
+    <p style="color:#0179F4 ">Contact</p>
+    <p style="color:white">Think you are Searching For This ...</p>
+<a href="https://www.facebook.com/lingeshwaran.rajkumar"  target="blank" class="fa fa-facebook" style="font-size:50px; width: 50px;text-align: center; margin-left: 30%"></a>
+<a href="https://twitter.com/lingesh28714382"  target="blank" class="fa fa-twitter" style="font-size:50px; width: 50px;text-align: center" ></a>
+<a href="https://plus.google.com/u/0/103339824417190777618"  target="blank" class="fa fa-google" style="font-size:50px; width: 50px;text-align: center"></a>
+<a href="https://www.linkedin.com/in/lingeshwaranr911/"  target="blank" class="fa fa-linkedin" style="font-size:50px; width: 50px;text-align: center"></a>
+<a href="https://github.com/LingeshwaranR"  target="blank" class="fa fa-github" style="font-size:50px; width: 50px;text-align: center"></a>
+
+
+    <p  style="color:white;font-size:px;text-align: center;margin-top: 10px">9751595324 |<a href="mailto:lingeshwaran@gmail.com" style="color:white"> lingeshwaran001@gmail.com</a></p>
+    <p style="color:white;font-size: 18px;text-align: center;margin-top: 10px">Blog -> <a style="color:white"  href="https://techkshare.blogspot.com/" target="blank">techkshare.blogspot.in </a>
+    <fieldset style="margin-top: 20px">
+      <input placeholder="Your name" type="text" id="inputName" tabindex="1" required autofocus>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Your Email Address" type="email" id="inputEmail" tabindex="2" required>
+    </fieldset>
+    
+    <fieldset>
+      <textarea placeholder="Type your Message Here...." id="inputMessage" tabindex="5" required></textarea>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+  </form>
+        
+    </div>
+    
+    
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+      
+
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="https://1.bp.blogspot.com/-GQ-3Tvj-Tmo/WqUjNYyywRI/AAAAAAAACmk/MOBHVlQ0jhQiP-02qQPA952BC-yL6Xz_QCLcBGAs/s1600/resjpg.png" alt="Avatar" class="avatar">
+    </div>
+      <a href="https://drive.google.com/file/d/1kmzo7xFdivdIBv8qtWrkd-x_igKf-sTR/view" target="blank" class="cancelbtn" style="width:100%; margin-left:40%; color:white " ><span>View As Pdf </span></a><br>
+
+   
+
+
+    
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+       <a href="#home" class="button" style="width:70%; margin-top: 5%; margin-left: 150px; margin-bottom:5% " >Go top</a>
+</div>
+    
+</body>
+</html> 
