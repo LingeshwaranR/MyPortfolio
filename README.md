@@ -1,2 +1,2 @@
 # MyPortfolio
-Link ==> (http://lingeshwaranr.ml/)http://lingeshwaranr.ml/
+Link ==> http://lingeshwaranr.ml/
